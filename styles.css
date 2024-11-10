@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+#gameContainer {
+    width: 800px;
+    height: 600px;
+    background-color: #fff;
+    border: 2px solid #000;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Stickman styles */
+.stickman {
+    position: absolute;
+}
+
+/* Player styles with green color for differentiation */
+#player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#player .head {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: green;
+    position: relative;
+}
+
+#player .body {
+    width: 5px;
+    height: 40px;
+    background-color: green;
+}
+
+#player .arm {
+    width: 30px;
+    height: 5px;
+    background-color: green;
+    position: relative;
+}
+
+.arm.left {
+    transform: rotate(45deg);
+    left: -20px; /* Move it left */
+}
+
+.arm.right {
+    transform: rotate(-45deg);
+    right: -20px; /* Move it right */
+}
+
+/* Attack animation */
+@keyframes attack-left {
+    0% { transform: rotate(45deg); }
+    50% { transform: rotate(135deg); } /* Raise arm */
+    100% { transform: rotate(45deg); }
+}
+
+@keyframes attack-right {
+    0% { transform
